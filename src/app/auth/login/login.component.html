@@ -1,0 +1,12 @@
+<div class="login-box">
+  <form [formGroup]="form" (submit)="onSubmit()">
+  <mat-card>
+  
+    <mat-form-field appearance="fill" class="fld">
+      <input formControlName="email" matInput placeholder="Correo" class="inp">
+      <!--   <mat-icon matPrefix class="my-icon">alternate_email</mat-icon> -->
+    </mat-form-field>
+    <button color="accent" mat-flat-button type="submit" [disabled]="form.invalid">Ingresar</button>
+  </mat-card>
+</form>
+</div>

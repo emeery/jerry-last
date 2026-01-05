@@ -17,8 +17,8 @@ export class TodoService {
   fetchTodo() {
     this.todoCollection = this.db.collection<Todo>('todo');
     this.todoCollection.valueChanges({ idField: 'id' })
-      .subscribe(todos => {
-        console.log(todos);
+      .subscribe((todo) => {
+        console.log(todo);
       })
 
   }

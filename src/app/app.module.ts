@@ -12,17 +12,27 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { environment } from '../environments/environment';
 import { TodoService } from './todo/todo.service';
 import { provideHttpClient } from '@angular/common/http';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthModule } from './auth/auth.module';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { SharedModule } from './shared/shared.module';
+import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    ToolbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule,
+    SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
     provideAnimationsAsync(),
