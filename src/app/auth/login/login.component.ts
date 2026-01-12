@@ -1,7 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { select, Store } from '@ngrx/store';
+import * as fromRoot from '../../store/reducers/app.reducer';
+import { Observable } from 'rxjs';
+import { selectIsLoading } from '../../store/selectors/ui.selectors';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,15 +12,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  isLoading$: Observable<boolean>;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
-
+    private store: Store<fromRoot.UiState>
   ) {
     
   }
   ngOnInit(): void {
+    this.isLoading$ = this.store.select(selectIsLoading)
+
     this.initForm();
+    /* this.store.subscribe(res => {
+      console.log('r',res);
+    }) */
   }
 
   initForm() {
@@ -27,10 +36,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.valid);
+    
     if(this.form.valid) {
       this.form.value.password = 'jerry123';
       this.authService.loginUser({email: this.form.value.email,password: this.form.value.password})
     }
+    console.log('t', this.isLoading$);
   }
 }
