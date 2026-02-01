@@ -21,7 +21,7 @@ export class AuthService {
     private auth: AngularFireAuth,
     private db: AngularFirestore,
     private router: Router,
-    private store: Store<fromRoot.UiState>
+    private store: Store<fromRoot.AppState>
   ) { }
 
   registerUser() {
@@ -36,7 +36,7 @@ export class AuthService {
     this.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then((res: any) => {
         console.log('login', res.user._delegate.accessToken)
-        //this.router.navigate(['/list'])
+        this.router.navigate(['/list'])
         // this.authSuccesfully();
       }).catch(err => console.log(err))
     // this.store.dispatch({type: 'STOP_LOADING'});•

@@ -1,6 +1,7 @@
-
-    <mat-toolbar color="accent  ">
-        <button class="menu-button" mat-icon-button >
-            <mat-icon>bubble_chart</mat-icon>
-        </button>
-    </mat-toolbar>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <mat-icon class="icon-display">bubble_chart</mat-icon>
+        <span class="example-spacer"></span>
+        <button (click)="toggleDarkTheme()">{{ icon() }}</button>
+    </mat-toolbar-row>
+</mat-toolbar>

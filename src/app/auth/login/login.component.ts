@@ -16,17 +16,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
-    private store: Store<fromRoot.UiState>
+    private store: Store<fromRoot.AppState>
   ) {
     
   }
   ngOnInit(): void {
     this.isLoading$ = this.store.select(selectIsLoading)
-
     this.initForm();
-    /* this.store.subscribe(res => {
-      console.log('r',res);
-    }) */
   }
 
   initForm() {
@@ -41,6 +37,5 @@ export class LoginComponent implements OnInit {
       this.form.value.password = 'jerry123';
       this.authService.loginUser({email: this.form.value.email,password: this.form.value.password})
     }
-    console.log('t', this.isLoading$);
   }
 }

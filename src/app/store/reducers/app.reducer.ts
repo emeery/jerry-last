@@ -1,18 +1,14 @@
-import { createReducer, on } from "@ngrx/store";
-import { START_LOADING, STOP_LOADING } from "../actions/ui.actions";
+import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
 
-export interface UiState {
-    isLoading: boolean
+import * as fromUi from './ui.reducer';
+import * as fromTheme from './theme.reducer';
+// import * as fromAuth from './'
+export interface AppState {
+    ui: fromUi.UiState;
+    theme: fromTheme.ThemeState
 }
 
-export const initialState: UiState = {
-    isLoading: false
-}
-
-export const uiReducer = createReducer(
-    initialState,
-    on(START_LOADING, state => ({ ...state, isLoading: true })),
-    on(STOP_LOADING, state => ({ ...state, isLoading: false }))
-)
-
-export const getIsLoading = (state:UiState) => state.isLoading;
+export const reducers: ActionReducerMap<AppState> = {
+    ui: fromUi.uiReducer,
+    theme: fromTheme.themeReducer
+};

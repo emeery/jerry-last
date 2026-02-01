@@ -14,10 +14,10 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
-import { TodoService } from './todo/todo.service';
 import { provideState, provideStore, StoreModule } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { uiReducer } from './store/reducers/app.reducer';
+import { themeReducer } from './store/reducers/theme.reducer';
+import { uiReducer } from './store/reducers/ui.reducer';
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { uiReducer } from './store/reducers/app.reducer';
     provideHttpClient(),
     provideStore(),
     provideState({ name: 'ui', reducer: uiReducer }),
+    provideState({ name: 'theme', reducer: themeReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   bootstrap: [AppComponent]
