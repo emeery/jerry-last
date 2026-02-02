@@ -7,4 +7,3 @@ export const selectIsLoading = createSelector(
   (state: UiState) => state.isLoading
 );
 
-// export const getIsLoading = (state:ThemeState) => state.isLoading;

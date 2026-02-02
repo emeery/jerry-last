@@ -3,20 +3,21 @@ import { Store } from '@ngrx/store';
 import * as fromTheme from '../../store/reducers/theme.reducer';
 import { selectCurrentTheme } from '../../store/selectors/theme.selectors';
 import { Observable } from 'rxjs';
-import { SET_THEME, TOGGLE_THEME } from '../../store/actions/theme.actions';
+import { TOGGLE_THEME } from '../../store/actions/theme.actions';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss'
 })
 export class ToolbarComponent implements OnInit {
-  isDarkThemeOn = signal(false);
-  icon = computed(() => (this.isDarkThemeOn() ? '🌞' : '🌚'));
+  // icon = computed(() => (this.isDarkThemeOn() ? '🌞' : '🌚'));
+  currentTheme$: Observable<string>;
   constructor(
     private store: Store
   ) {}
   
   ngOnInit(): void {
+    this.currentTheme$ = this.store.select(selectCurrentTheme);
     this.setTheme();
   }
 

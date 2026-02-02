@@ -1,7 +1,14 @@
-<mat-toolbar>
+<mat-toolbar [ngClass]="(currentTheme$ | async)">
     <mat-toolbar-row>
-        <mat-icon class="icon-display">bubble_chart</mat-icon>
+        <mat-icon class="icon-display" style="color:#FFCE71;">bubble_chart</mat-icon>
         <span class="example-spacer"></span>
-        <button (click)="toggleTheme()">{{ icon() }}</button>
+        @if ((currentTheme$ | async) === 'dark-theme') {
+        <button (click)="toggleTheme()"> <img
+                src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg" /></button>
+        }
+        @else {
+        <img (click)="toggleTheme()"
+            src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
+        }
     </mat-toolbar-row>
 </mat-toolbar>
