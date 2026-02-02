@@ -1,6 +1,11 @@
 <mat-toolbar [ngClass]="(currentTheme$ | async)">
     <mat-toolbar-row>
+        @if ((currentTheme$ | async) === 'dark-theme') {
         <mat-icon class="icon-display" style="color:#FFCE71;">bubble_chart</mat-icon>
+        } @else {
+            <mat-icon class="icon-display" style="color:#0F172B;">bubble_chart</mat-icon>
+        }
+
         <span class="example-spacer"></span>
         @if ((currentTheme$ | async) === 'dark-theme') {
         <button (click)="toggleTheme()"> <img
