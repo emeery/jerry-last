@@ -17,11 +17,8 @@ export class AppComponent implements OnInit {
     this.currentTheme$ = this.store.select(selectCurrentTheme);
   }
 
-  ngOnInit(): void {}
-  toggleTheme() {
-    /* this.currentTheme$.subscribe(theme => {
-      const newTheme = theme === 'light-theme' ? 'dark-theme' : 'light-theme';
-      // console.log('newTheme', newTheme);
-    }) */
+  ngOnInit(): void {
+    
   }
+
 }

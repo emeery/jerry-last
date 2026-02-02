@@ -3,25 +3,25 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* body {
-  --text-color: #222;
-  --background-color: #fff;
-} */
-
-body.light-theme {
-  --text-color: #fff;
-  --background-color: #e43434;
+/* :root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
 }
+ */
+body.light-theme {
+   --bg-color: #ffffff;
+  --text-color: #000000;
+} 
 
 
 body.dark-theme {
   --text-color: #fff;
-  --background-color: #222;
+  --background-color: #e43434;
 }
 
-body {
+ body {
   background: var(--background-color);
-}
+} 
 
 h1,
 p {

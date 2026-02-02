@@ -22,44 +22,20 @@ export class ToolbarComponent implements OnInit {
 
   setTheme(): void {
     this.store.select(selectCurrentTheme).subscribe(theme => {
-      /* this.toggleTheme(theme); */
-
-      if(theme === 'dark-theme') {
-        document.body.classList.toggle('dark-theme');
-      } 
-      if(theme === 'light-theme') {
-
-      }
+      this.applyTheme(theme);
     });
   }
   
 
   toggleTheme(): void {
-      this.store.dispatch(TOGGLE_THEME());
-     /* const currentTheme = this.store.select(selectCurrentTheme);
-     currentTheme.subscribe(theme => {
-      if(theme === 'dark-theme')  {
-        console.log('the',theme);
-        this.store.dispatch(SET_THEME({theme: 'light-theme'}));
-        document.body.classList.toggle('dark-theme');
-      } else {
-        document.body.classList.toggle('light-theme');
-      } */
-      
-      /* else {
-        this.store.dispatch(SET_THEME({theme: 'dark'}))
-      } */
-       // document.body.classList.remove('light', 'dark');
-      //if(theme == 'light') this.store.dispatch(SET_THEME({theme: 'dark'}))
-      
-        /* else {this.store.dispatch(SET_THEME({theme: 'dark '}))} */
-/*       newTheme = theme === 'dark' ? 'light': 'dark';
-      console.log('new',newTheme); */
-      
+    this.store.dispatch(TOGGLE_THEME());
+  }
 
-     // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-   /*  
-    this.isDarkThemeOn.update((isDarkThemeOn) => !isDarkThemeOn); */
+  private applyTheme(theme: string): void {
+    if (theme === 'dark-theme') {
+      document.body.classList.toggle('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
   }
 }
