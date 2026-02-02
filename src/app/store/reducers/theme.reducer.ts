@@ -13,7 +13,7 @@ export const themeReducer = createReducer(
     initialState,
     on(TOGGLE_THEME, (state) => ({
     ...state,
-    theme: state.currentTheme === 'dark-theme' ? 'ligth-theme' : 'dark-theme',
+    currentTheme: state.currentTheme === 'dark-theme' ? 'ligth-theme' : 'dark-theme',
   })), 
     on(SET_THEME, (state, { theme }) => ({
     ...state,

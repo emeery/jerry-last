@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import * as fromTheme from '../../store/reducers/theme.reducer';
 import { selectCurrentTheme } from '../../store/selectors/theme.selectors';
 import { Observable } from 'rxjs';
-import { SET_THEME } from '../../store/actions/theme.actions';
+import { SET_THEME, TOGGLE_THEME } from '../../store/actions/theme.actions';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -35,7 +35,8 @@ export class ToolbarComponent implements OnInit {
   
 
   toggleTheme(): void {
-     const currentTheme = this.store.select(selectCurrentTheme);
+      this.store.dispatch(TOGGLE_THEME());
+     /* const currentTheme = this.store.select(selectCurrentTheme);
      currentTheme.subscribe(theme => {
       if(theme === 'dark-theme')  {
         console.log('the',theme);
@@ -43,7 +44,7 @@ export class ToolbarComponent implements OnInit {
         document.body.classList.toggle('dark-theme');
       } else {
         document.body.classList.toggle('light-theme');
-      }
+      } */
       
       /* else {
         this.store.dispatch(SET_THEME({theme: 'dark'}))
@@ -55,7 +56,7 @@ export class ToolbarComponent implements OnInit {
 /*       newTheme = theme === 'dark' ? 'light': 'dark';
       console.log('new',newTheme); */
       
-     })
+
      // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
    /*  
