@@ -3,10 +3,16 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-body {
+/* body {
   --text-color: #222;
   --background-color: #fff;
+} */
+
+body.light-theme {
+  --text-color: #fff;
+  --background-color: #e43434;
 }
+
 
 body.dark-theme {
   --text-color: #fff;

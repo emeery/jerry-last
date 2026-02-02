@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectCurrentTheme } from './store/selectors/theme.selectors';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'jerrylast';
+  currentTheme$: Observable<string>;
+  constructor(
+    private store: Store
+  ) {
+    this.currentTheme$ = this.store.select(selectCurrentTheme);
+  }
+
+  ngOnInit(): void {}
+  toggleTheme() {
+    /* this.currentTheme$.subscribe(theme => {
+      const newTheme = theme === 'light-theme' ? 'dark-theme' : 'light-theme';
+      // console.log('newTheme', newTheme);
+    }) */
+  }
 }
