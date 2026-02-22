@@ -13,18 +13,18 @@ import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
-import { provideState, provideStore, StoreModule } from '@ngrx/store';
+import { provideState, provideStore} from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { themeReducer } from './store/reducers/theme.reducer';
 import { uiReducer } from './store/reducers/ui.reducer';
+import { ToolbarComponent } from './shared/layout/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
     ToolbarComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

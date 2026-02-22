@@ -1,9 +1,9 @@
 import { Component, computed, OnInit, signal } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as fromTheme from '../../store/reducers/theme.reducer';
-import {  selectCurrentTheme } from '../../store/selectors/theme.selectors';
+import * as fromTheme from '../../../store/reducers/theme.reducer';
+import {  selectCurrentTheme } from '../../../store/selectors/theme.selectors';
 import { Observable } from 'rxjs';
-import { TOGGLE_THEME } from '../../store/actions/theme.actions';
+import { TOGGLE_THEME } from '../../../store/actions/theme.actions';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',

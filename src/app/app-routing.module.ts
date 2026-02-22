@@ -5,7 +5,11 @@ import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'list', component: TodoListComponent }
+  { path: 'list', component: TodoListComponent },
+  { path: 'profile', 
+  loadChildren: () => import('./profile/profile.module')
+  .then(m => m.ProfileModule), canLoad: []
+  }
 ];
 
 @NgModule({

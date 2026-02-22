@@ -38,7 +38,7 @@ export class AuthService {
         console.log('login', res.user._delegate.accessToken)
         if(res.user._delegate.accessToken) {
           timer(1000).subscribe(time => {
-            this.router.navigate(['/list'])
+            this.router.navigate(['/profile'])
             this.store.dispatch({type: 'STOP_LOADING'});
           })
         }
