@@ -23,7 +23,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   setTheme(): void {
-    this.store.select(selectCurrentTheme).subscribe(theme => {
+    this.currentTheme$.subscribe(theme => {
       this.applyTheme(theme);
     });
   }

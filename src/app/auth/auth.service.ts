@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, timer } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../store/reducers/app.reducer';
 import * as UI from '../store/actions/ui.actions';
@@ -36,9 +36,14 @@ export class AuthService {
     this.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then((res: any) => {
         console.log('login', res.user._delegate.accessToken)
-        this.router.navigate(['/list'])
-        // this.authSuccesfully();
+        if(res.user._delegate.accessToken) {
+          timer(1000).subscribe(time => {
+            this.router.navigate(['/list'])
+            this.store.dispatch({type: 'STOP_LOADING'});
+          })
+        }
+        // authSuccesfully();
       }).catch(err => console.log(err))
-    // this.store.dispatch({type: 'STOP_LOADING'});•
+    // 
   }
 }
