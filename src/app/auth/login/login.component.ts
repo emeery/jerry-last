@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import * as fromRoot from '../../store/reducers/app.reducer';
 import { Observable } from 'rxjs';
 import { selectIsLoading } from '../../store/selectors/ui.selectors';
@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    
     if(this.form.valid) {
       this.form.value.password = 'jerry123';
       this.authService.loginUser({email: this.form.value.email,password: this.form.value.password})

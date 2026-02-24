@@ -18,6 +18,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { themeReducer } from './store/reducers/theme.reducer';
 import { uiReducer } from './store/reducers/ui.reducer';
 import { ToolbarComponent } from './shared/layout/toolbar/toolbar.component';
+import { authReducer } from './store/reducers/auth.reducer';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ToolbarComponent } from './shared/layout/toolbar/toolbar.component';
     provideStore(),
     provideState({ name: 'ui', reducer: uiReducer }),
     provideState({ name: 'theme', reducer: themeReducer }),
+    provideState({ name: 'auth', reducer: authReducer}),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   bootstrap: [AppComponent]

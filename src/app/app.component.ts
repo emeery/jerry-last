@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectCurrentTheme } from './store/selectors/theme.selectors';
 import * as fromTheme from '../app/store/reducers/theme.reducer';
+import { AuthService } from './auth/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,11 +13,13 @@ export class AppComponent implements OnInit {
   title = 'jerrylast';
   currentTheme$: Observable<string>;
   constructor(
-    private store: Store<fromTheme.ThemeState>
+    private store: Store<fromTheme.ThemeState>,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.currentTheme$ = this.store.select(selectCurrentTheme);
+    this.authService.initAuthListener();
   }
 
 }

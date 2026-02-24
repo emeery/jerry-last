@@ -2,18 +2,20 @@
     <mat-toolbar-row>
         @if ((currentTheme$ | async) === 'dark-theme') {
         <mat-icon class="icon-display">bubble_chart</mat-icon>
-        } @else {
-            <!-- <mat-icon class="icon-display-sun">bubble_chart</mat-icon> -->
         }
 
         <span class="example-spacer"></span>
+
         @if ((currentTheme$ | async) === 'dark-theme') {
         <button (click)="toggleTheme()"> <img
                 src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg" /></button>
+                @if (isAuthenticated$ | async) {<mat-icon (click)="logout()" class="logout-icon">power_settings_new</mat-icon>}
+        
         }
         @else {
-        <img (click)="toggleTheme()"
+        <img class="sun" (click)="toggleTheme()"
             src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
+         @if (isAuthenticated$ | async) {<mat-icon (click)="logout()" class="logout-icon-light">power_settings_new</mat-icon>}
         }
     </mat-toolbar-row>
 </mat-toolbar>

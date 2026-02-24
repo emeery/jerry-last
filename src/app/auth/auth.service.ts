@@ -6,6 +6,7 @@ import { Subject, timer } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../store/reducers/app.reducer';
 import * as UI from '../store/actions/ui.actions';
+import * as AUTH from '../store/actions/auth.actions';
 
 export interface AuthData {
   email: string;
@@ -24,6 +25,20 @@ export class AuthService {
     private store: Store<fromRoot.AppState>
   ) { }
 
+  initAuthListener() {
+    this.auth.authState.subscribe(user => {
+      console.log('user', user);
+      if (user) {
+        this.store.dispatch(AUTH.SET_AUTHENTICATED());
+        this.router.navigate(['/profile']);
+      } else {
+         this.store.dispatch(AUTH.SET_UNAUTHENTICATED());
+         this.router.navigate(['/'])
+        /*  this.trainingService.cancelSubscriptions();*/
+      }
+    })
+  }
+
   registerUser() {
     this.auth.createUserWithEmailAndPassword('jerry@live.com', 'jerry123')
       .then((res: any) => {
@@ -36,14 +51,21 @@ export class AuthService {
     this.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then((res: any) => {
         console.log('login', res.user._delegate.accessToken)
-        if(res.user._delegate.accessToken) {
+        if (res.user._delegate.accessToken) {
           timer(1000).subscribe(time => {
-            this.router.navigate(['/profile'])
-            this.store.dispatch({type: 'STOP_LOADING'});
+            this.router.navigate(['/profile']);
+            this.store.dispatch({ type: 'SET_AUTHENTICATED' })
+            this.store.dispatch(UI.STOP_LOADING());
           })
         }
-        // authSuccesfully();
-      }).catch(err => console.log(err))
-    // 
+      }).catch(err => {
+        console.log(err)
+        this.store.dispatch({type: 'STOP_LOADING'})
+      })
   }
+
+  logout() {
+    this.auth.signOut();
+  }
+
 }
