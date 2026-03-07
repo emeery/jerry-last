@@ -1,0 +1,78 @@
+.header {
+   background-size: cover; /* Ajusta la imagen al tamaño */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+  width: 100%; /* Ancho completo */
+  height: 400px; /* Ajusta la altura deseada */
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.dark-theme {
+  background-color: #030712;
+}
+
+.logout-icon-light {
+  color: gray;
+  transform: scale(1.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logout-icon-light:hover {
+  color: gray;
+  transform: scale(2);
+}
+
+.logout-icon {
+  color: #B6F487;
+  transform: scale(1.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logout-icon:hover {
+  color: #B6F487;
+  transform: scale(2);
+}
+
+/* banner */
+.profile-stats-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px; /* Ancho similar al perfil de twitter */
+    
+    border-bottom: 1px solid #38444d;
+    padding: 10px 0;
+}
+
+.stat-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.2s;
+    border-radius: 10px;
+}
+
+/* Efecto Hover estilo Twitter */
+.stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #8899a6;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}

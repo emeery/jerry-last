@@ -17,14 +17,12 @@ import { provideState, provideStore} from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { themeReducer } from './store/reducers/theme.reducer';
 import { uiReducer } from './store/reducers/ui.reducer';
-import { ToolbarComponent } from './shared/layout/toolbar/toolbar.component';
 import { authReducer } from './store/reducers/auth.reducer';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    ToolbarComponent,
     LoginComponent,
   ],
   imports: [

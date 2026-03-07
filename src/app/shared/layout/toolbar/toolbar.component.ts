@@ -1,4 +1,4 @@
-import { Component, computed, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -6,7 +6,7 @@ import * as fromRoot from '../../../store/reducers/app.reducer';
 import {  selectCurrentTheme } from '../../../store/selectors/theme.selectors';
 import { TOGGLE_THEME } from '../../../store/actions/theme.actions';
 import { AuthService } from '../../../auth/auth.service';
-import { selectCurrentAuth } from '../../../store/selectors/auth.selector';
+import { selectIsAuth } from '../../../store/selectors/auth.selector';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -14,7 +14,6 @@ import { selectCurrentAuth } from '../../../store/selectors/auth.selector';
 })
 export class ToolbarComponent implements OnInit {
   currentTheme$: Observable<string>;
-  currentColor$: Observable<string>;
   isAuthenticated$: Observable<boolean>;
   constructor(
     private store: Store<fromRoot.AppState>,
@@ -24,7 +23,7 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
     this.currentTheme$ = this.store.select(selectCurrentTheme); // get the state theme
     this.setTheme(); // set current theme
-    this.isAuthenticated$ = this.store.select(selectCurrentAuth);
+    this.isAuthenticated$ = this.store.select(selectIsAuth);
   }
 
   setTheme(): void {

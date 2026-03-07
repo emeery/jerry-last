@@ -1,1 +1,28 @@
-<p>profile works!</p>
+<div  [ngClass]="(currentTheme$ | async)">
+
+    <mat-toolbar [ngClass]="(currentTheme$ | async)">
+        <mat-toolbar-row>
+
+
+            <span class="example-spacer"></span>
+
+            <mat-icon (click)="logout()" class="logout-icon-light">power_settings_new</mat-icon>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <img class="header"
+        src="https://imagenes.elpais.com/resizer/v2/LQ4T7MDHCZG4NORABVV72NS6ZM.jpg?auth=fa883a1c71cfbaa33c3e7f5a515532f171f4600639a2f46cebeac849e6b75e7b&width=1200"
+        alt="Texto alternativo" width="500" height="60">
+    <div  class="profile-stats-bar">
+        <a href="#" class="stat-item">
+            <span class="stat-label">Tweets</span>
+            <span class="stat-value">1,504</span>
+        </a>
+        <a href="#" class="stat-item">
+            <span class="stat-label">Siguiendo</span>
+            <span class="stat-value">850</span>
+        </a>
+        <a href="#" class="stat-item">
+            <span class="stat-label">Seguidores</span>
+            <span class="stat-value">12.5K</span>
+        </a>
+    </div>

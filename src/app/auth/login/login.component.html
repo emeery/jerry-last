@@ -1,3 +1,25 @@
+<div [ngClass]="(currentTheme$ | async)">
+  <mat-toolbar [ngClass]="(currentTheme$ | async)">
+    <mat-toolbar-row>
+        @if ((currentTheme$ | async) === 'dark-theme') {
+        <mat-icon class="icon-display">bubble_chart</mat-icon>
+        }
+
+        <span class="example-spacer"></span>
+
+        @if ((currentTheme$ | async) === 'dark-theme') {
+        <button (click)="toggleTheme()"> <img
+                src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg" /></button>
+               
+        
+        }
+        @else {
+        <img class="sun" (click)="toggleTheme()"
+            src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
+        
+        }
+    </mat-toolbar-row>
+</mat-toolbar>
 <div class="login-box">
   <form [formGroup]="form" (submit)="onSubmit()">
     <mat-card [ngClass]="(currentTheme$ | async)">      
@@ -12,4 +34,5 @@
       }
     </mat-card>
   </form>
+</div>
 </div>

@@ -19,3 +19,33 @@ mat-card {
 .dark-theme {
     background-color: #030712;
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icon-display {
+  transform: scale(2);
+  color: #FFCE71;
+}
+
+.icon-display-sun {
+  transform: scale(2);
+  color: #0F172B;
+}
+
+.dark-theme {
+  background-color: #030712;
+}
+
+
+
+img {
+  cursor: pointer;
+  width: 40%;
+}
+
+.sun {
+  cursor: pointer;
+  width: 30%;
+}

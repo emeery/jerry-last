@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs';
+import { selectIsAuth } from '../store/selectors/auth.selector';
 
-import { selectCurrentAuth } from '../store/selectors/auth.selector';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,10 +13,10 @@ export class AuthGuard {
   
   canActivate() {
     
-    return this.store.select(selectCurrentAuth).pipe(take(1));
+    return this.store.select(selectIsAuth).pipe(take(1));
   }
 
   canLoad() {
-    return this.store.select(selectCurrentAuth).pipe(take(1));
+    return this.store.select(selectIsAuth).pipe(take(1));
   }
 }

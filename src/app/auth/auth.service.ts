@@ -42,7 +42,6 @@ export class AuthService {
   registerUser() {
     this.auth.createUserWithEmailAndPassword('jerry@live.com', 'jerry123')
       .then((res: any) => {
-        //this.authSuccesfully();
       }).catch(err => console.log(err))
   }
 
@@ -50,22 +49,21 @@ export class AuthService {
     this.store.dispatch(UI.START_LOADING());
     this.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then((res: any) => {
-        console.log('login', res.user._delegate.accessToken)
         if (res.user._delegate.accessToken) {
           timer(1000).subscribe(time => {
             this.router.navigate(['/profile']);
-            this.store.dispatch({ type: 'SET_AUTHENTICATED' })
             this.store.dispatch(UI.STOP_LOADING());
           })
         }
       }).catch(err => {
         console.log(err)
-        this.store.dispatch({type: 'STOP_LOADING'})
+        this.store.dispatch(UI.STOP_LOADING());
       })
   }
 
   logout() {
     this.auth.signOut();
+    // this.store.dispatch(AUTH.SET_UNAUTHENTICATED());
   }
 
 }
