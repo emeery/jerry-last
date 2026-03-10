@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'SaturdayFont'; /* Name your font family */
+  src: url('app/assets/fonts/Saturday_Farmhouse.otf') format('opentype');
+ /*  font-weight: 400;
+  font-style: normal; */
+}
 
 html,
 body {

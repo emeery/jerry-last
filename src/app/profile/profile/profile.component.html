@@ -1,28 +1,57 @@
-<div  [ngClass]="(currentTheme$ | async)">
+<div>
 
-    <mat-toolbar [ngClass]="(currentTheme$ | async)">
-        <mat-toolbar-row>
+    <!--  <mat-toolbar-row>
+        <span class="example-spacer"></span>
+
+    </mat-toolbar-row> -->
 
 
-            <span class="example-spacer"></span>
 
-            <mat-icon (click)="logout()" class="logout-icon-light">power_settings_new</mat-icon>
-        </mat-toolbar-row>
-    </mat-toolbar>
-    <img class="header"
-        src="https://imagenes.elpais.com/resizer/v2/LQ4T7MDHCZG4NORABVV72NS6ZM.jpg?auth=fa883a1c71cfbaa33c3e7f5a515532f171f4600639a2f46cebeac849e6b75e7b&width=1200"
-        alt="Texto alternativo" width="500" height="60">
-    <div  class="profile-stats-bar">
-        <a href="#" class="stat-item">
-            <span class="stat-label">Tweets</span>
-            <span class="stat-value">1,504</span>
-        </a>
-        <a href="#" class="stat-item">
-            <span class="stat-label">Siguiendo</span>
-            <span class="stat-value">850</span>
-        </a>
-        <a href="#" class="stat-item">
-            <span class="stat-label">Seguidores</span>
-            <span class="stat-value">12.5K</span>
-        </a>
-    </div>
+    <mat-drawer-container class="example-container">
+
+        <mat-drawer mode="side" opened>
+            <h2 class="header-with-icon">Premium Materials</h2>
+            <!--  <mat-toolbar color="primary">
+               
+                     
+              
+                    
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon"
+                    aria-label="Example icon-button with heart icon">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <mat-icon>share</mat-icon>
+                </button>
+            </mat-toolbar> -->
+            <mat-nav-list>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>person</mat-icon>
+                    <h4>PROYECTS</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>assignment</mat-icon>
+                    <h4>ABOUT</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>domain</mat-icon>
+                    <h4>CONTACT</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>folder_shared</mat-icon>
+                    <h4>LINKEDIN</h4>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-drawer>
+        <mat-drawer-content>
+            <img class="header"
+                src="https://imagenes.elpais.com/resizer/v2/LQ4T7MDHCZG4NORABVV72NS6ZM.jpg?auth=fa883a1c71cfbaa33c3e7f5a515532f171f4600639a2f46cebeac849e6b75e7b&width=1200"
+                alt="Texto alternativo" width="500" height="60">
+            <mat-tab-group>
+                <mat-tab label="Acerca"> Content 1 </mat-tab>
+                <mat-tab label="Experiencia"> Content 2 </mat-tab>
+                <mat-tab label="Contacto"> Content 3 </mat-tab>
+            </mat-tab-group>
+        </mat-drawer-content>
+    </mat-drawer-container>

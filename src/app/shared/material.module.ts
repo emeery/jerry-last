@@ -5,7 +5,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-
 import { MatListModule } from '@angular/material/list';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -19,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const AllMaterialModules = [
     MatButtonModule,
@@ -39,7 +39,8 @@ const AllMaterialModules = [
     MatSortModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTabsModule
 ];
 
 @NgModule({
