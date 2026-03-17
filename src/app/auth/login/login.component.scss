@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .login-box {
     height: 100vh;
     display: flex;
@@ -9,36 +11,32 @@ mat-card {
     width: 300px;
     padding: 5%;
     height: 50%;
-    
 }
 
 .light-theme {
-    background-color: #ffffff;
+    background-image: linear-gradient(to bottom right, $light-theme-secondary-color, $light-theme-primary-color);
+}
+
+.toolbar-light {
+  background-color: $light-theme-secondary-color;
 }
 
 .dark-theme {
-    background-color: #030712;
+    background-color: $dark-theme-primary-color;
 }
 
 .example-spacer {
   flex: 1 1 auto;
 }
 
+// images & icons styles
 .icon-display {
   transform: scale(2);
-  color: #FFCE71;
+  color: $dark-theme-secondary-color;
 }
-
 .icon-display-sun {
   transform: scale(2);
-  color: #0F172B;
 }
-
-.dark-theme {
-  background-color: #030712;
-}
-
-
 
 img {
   cursor: pointer;

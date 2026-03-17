@@ -41,6 +41,15 @@
 h4 {
   font-family: 'SaturdayFont', sans-serif;
   font-size: 10vh;
+  color: #B6F487;
+}
+
+.container {
+  display: flex;
+}
+
+.example-container {
+  background: yellow !important;
 }
 
 .header-with-icon {
@@ -54,4 +63,46 @@ h4 {
     /* Other styling */
     font-size: 22px;
     line-height: 1.5; /* Helps with vertical alignment if needed */
+}
+
+.example-icon {
+  margin: 3%;
+  color: rosybrown;
+}
+
+.light-theme {
+    background-color: #ffffff;
+}
+
+.dark-theme {
+    background-color: #030712;
+}
+
+.theme{
+  width: 40px;
+  height: 40px;
+  margin: 3%;
+  cursor: pointer;
+}
+
+.outer {
+    position: relative; /* or absolute */
+    
+    /* unnecessary styling properties */
+    margin: 5%;
+    width: 80%;
+    height: 500px;
+    border: 1px solid red;
+}
+
+.inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* unnecessary styling properties */
+    max-width: 50%;
+    text-align: center;
+    border: 1px solid blue;
 }

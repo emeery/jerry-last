@@ -6,6 +6,7 @@ import { AuthService } from '../../auth/auth.service';
 import { selectCurrentTheme } from '../../store/selectors/theme.selectors';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TOGGLE_THEME } from '../../store/actions/theme.actions';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
   currentTheme$: Observable<string>;
   pokeball = '../../assets/images/icon.png';
   constructor(
-    private store:Store,
+    private store: Store,
     private _authService: AuthService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
@@ -34,5 +35,9 @@ export class ProfileComponent implements OnInit {
 
   logout() {
     this._authService.logout();
+  }
+
+  toggleTheme(): void {
+    this.store.dispatch(TOGGLE_THEME());
   }
 }

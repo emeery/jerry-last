@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private store: Store<fromRoot.AppState>
   ) {
-    
+
   }
   ngOnInit(): void {
     this.isLoading$ = this.store.select(selectIsLoading);
@@ -37,14 +37,14 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.form.valid) {
+    if (this.form.valid) {
       this.form.value.password = 'jerry123';
-      this.authService.loginUser({email: this.form.value.email,password: this.form.value.password})
+      this.authService.loginUser({ email: this.form.value.email, password: this.form.value.password })
 
     }
   }
 
-   toggleTheme(): void {
-      this.store.dispatch(TOGGLE_THEME());
-    }
+  toggleTheme(): void {
+    this.store.dispatch(TOGGLE_THEME());
+  }
 }

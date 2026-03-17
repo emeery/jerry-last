@@ -32,6 +32,11 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "assets": [
               {
                 "glob": "**/*",
@@ -39,7 +44,6 @@
               }
             ],
             "styles": [
-              
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],

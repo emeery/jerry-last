@@ -1,0 +1,15 @@
+// dark-theme colors
+$dark-theme-primary-color: #030712;
+$dark-theme-secondary-color: #FFCE71;
+
+// light-theme 
+$light-theme-primary-color: #ffffff;
+$light-theme-secondary-color: #FFCE71;
+
+$direction: 45deg;
+
+/* @mixin gradient-dark-theme($direction, $ligth-theme-secondary-color, $light-theme-primary-color) {
+  background: linear-gradient($direction, $ligth-theme-secondary-color, $light-theme-primary-color);
+  background: -webkit-linear-gradient($direction,$ligth-theme-secondary-color, $light-theme-primary-color);
+  // ... other prefixes
+} */
