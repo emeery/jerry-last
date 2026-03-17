@@ -1,27 +1,19 @@
-<!--  <mat-toolbar-row>
-        <span class="example-spacer"></span>
-
-    </mat-toolbar-row> -->
-
-
 
 <mat-drawer-container [ngClass]="(currentTheme$ | async)">
-
     <mat-drawer [ngClass]="(currentTheme$ | async)" mode="side" opened>
         <div class="container">
             <h2 class="header-with-icon">P</h2>
             <span class="example-spacer"></span>
             @if ((currentTheme$ | async) === 'dark-theme') {
-            <img class="icon-img" (click)="toggleTheme()"
+            <img class="icon-img-theme" (click)="toggleTheme()"
                 src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg" />
             } @else {
-            <img class="icon-img" (click)="toggleTheme()"
+            <img class="icon-img-theme" (click)="toggleTheme()"
                 src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
             }
-
         </div>
         @if ((currentTheme$ | async) === 'dark-theme') {
-        <mat-nav-list [ngClass]="(currentTheme$ | async)">
+        <mat-nav-list >
             <mat-list-item>
                 <mat-icon mat-list-icon>assignment</mat-icon>
                 <h4>PROYECTS</h4>
@@ -43,10 +35,18 @@
                 <h4>LOGOUT</h4>
             </mat-list-item>
             <hr class="centered-line-dark">
-
+             <mat-card class="example-card">
+                <mat-card-header>
+                    
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title class="title">GERARDO</mat-card-title>
+                    <mat-card-subtitle class="subtitle">Programador Front-End</mat-card-subtitle>
+                    
+                </mat-card-header>
+            </mat-card>
         </mat-nav-list>
         } @else {
-        <mat-nav-list [ngClass]="(currentTheme$ | async)">
+        <mat-nav-list >
             <mat-list-item>
                 <mat-icon mat-list-icon>assignment</mat-icon>
                 <h4>PROYECTS</h4>
@@ -68,19 +68,19 @@
                 <h4>LOGOUT</h4>
             </mat-list-item>
             <hr class="centered-line-light">
-            <mat-card class="example-card">
+             <mat-card class="example-card">
                 <mat-card-header>
+                    
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>Gerardo</mat-card-title>
-                    <mat-card-subtitle>Programador Front-End</mat-card-subtitle>
+                    <mat-card-title class="title">GERARDO</mat-card-title>
+                    <mat-card-subtitle class="subtitle">Programador Front-End</mat-card-subtitle>
+                    
                 </mat-card-header>
             </mat-card>
         </mat-nav-list>
-        }
-
+        } <!-- @else -->
     </mat-drawer>
     <mat-drawer-content>
-
         <img class="header"
             src="https://imagenes.elpais.com/resizer/v2/LQ4T7MDHCZG4NORABVV72NS6ZM.jpg?auth=fa883a1c71cfbaa33c3e7f5a515532f171f4600639a2f46cebeac849e6b75e7b&width=1200"
             alt="Texto alternativo" width="500" height="60">

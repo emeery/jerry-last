@@ -2,12 +2,16 @@
 $dark-theme-primary-color: #030712;
 $dark-theme-secondary-color: #FFCE71;
 $dark-theme-tertiary-color: #B6F486;
+$dark-theme-fourth-color: #ddf1cd;
+$dark-theme-fifth-color: #5F9EA0;
 // light-theme 
 $light-theme-primary-color: #ffffff;
 $light-theme-secondary-color: #FFCE71;
 $light-theme-tertiary-color: #e47e5f;
+$light-theme-fourth-color: #800000;
 
 $direction: 45deg;
+
 
 /* @mixin gradient-dark-theme($direction, $ligth-theme-secondary-color, $light-theme-primary-color) {
   background: linear-gradient($direction, $ligth-theme-secondary-color, $light-theme-primary-color);

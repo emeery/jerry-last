@@ -1,13 +1,5 @@
 @import '../../styles/variables';
 
-.header {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 400px;
-}
-
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -23,7 +15,7 @@
 }
 
 .dark-theme {
-    background-color: $dark-theme-primary-color;
+  background-color: $dark-theme-primary-color;
 }
 
 .dark-theme h4 {
@@ -65,9 +57,8 @@
   width: 50%;
   margin-left: 3%;
   margin-right: auto;
-  /* Optional: customize appearance */
   height: 2px;
-  background-color: $dark-theme-tertiary-color;
+  background-color: $dark-theme-fifth-color;
   border: none; /* Remove default border if adding background color */
 }
 
@@ -75,10 +66,9 @@
   width: 50%;
   margin-left: 3%;
   margin-right: auto;
-  /* Optional: customize appearance */
   height: 2px;
   background-color: $light-theme-tertiary-color;
-  border: none; /* Remove default border if adding background color */
+  border: none; 
 }
 
 .header-with-icon {
@@ -89,33 +79,80 @@
     background-position: left top; /* Position the icon to the left and vertically centered */
     padding-left: 30px; /* Add padding to make space for the icon */
     background-size: 30px 30px; /* Adjust the icon size */
-    /* Other styling */
     font-size: 22px;
     line-height: 1.5; /* Helps with vertical alignment if needed */
 }
 
-.example-icon {
-  margin: 3%;
-  color: rosybrown;
-}
 
-
-
-.icon-img{
+.icon-img-theme {
   width: 40px;
   height: 40px;
   margin: 3%;
   cursor: pointer;
 }
 
-.example-card {
-  max-width: 400px;
-  border: none;
+// card sidenav profile
+.example-header-image-light {
+  background-image: url('https://raw.githubusercontent.com/emeery/jerry-last/refs/heads/master/src/app/assets/images/avatar.jpeg');
+  background-size: cover;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+//light theme styles mat card
+.light-theme .example-card {
+  max-width: 400px;
+  margin: 2%;
+  border: none;
+  background: $light-theme-tertiary-color;
+}
+
+.light-theme .title {
+  color: $light-theme-fourth-color;
+  font-family: 'WelcomeDarling', sans-serif;
+  font-size: 3vw;
+  
+}
+
+.light-theme .subtitle {
+  color: $light-theme-fourth-color;
+  font-family: 'WelcomeDarling', sans-serif;
+  font-size: 1.5vw;
+}
+
+//dark theme styles mat card
+.example-header-image-light {
+  background-image: url('https://raw.githubusercontent.com/emeery/jerry-last/refs/heads/master/src/app/assets/images/avatar.jpeg');
   background-size: cover;
+}
+
+.dark-theme .example-card {
+  max-width: 400px;
+  margin: 2%;
+  border: none;
+  background: $dark-theme-primary-color;
+  border-color: 2px solid rebeccapurple;
+}
+
+.dark-theme .title {
+  color: $dark-theme-fourth-color;
+  font-family: 'WelcomeDarling', sans-serif;
+  font-size: 3vw;
+  
+}
+
+.dark-theme .subtitle {
+  color: $dark-theme-fourth-color;
+  font-family: 'WelcomeDarling', sans-serif;
+  font-size: 1.5vw;
+}
+
+
+//container mat-sdrawer-content
+.header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
 }
 
 .outer {
@@ -131,8 +168,6 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
-    /* unnecessary styling properties */
     max-width: 50%;
     text-align: center;
     border: 1px solid blue;
