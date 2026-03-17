@@ -9,21 +9,21 @@
 
     <mat-drawer [ngClass]="(currentTheme$ | async)" mode="side" opened>
         <div class="container">
-            <h2 class="header-with-icon">Premium Materials</h2>
+            <h2 class="header-with-icon">P</h2>
             <span class="example-spacer"></span>
             @if ((currentTheme$ | async) === 'dark-theme') {
-            <img (click)="toggleTheme()" class="theme"
+            <img class="icon-img" (click)="toggleTheme()"
                 src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg" />
             } @else {
-            <img class="theme" (click)="toggleTheme()"
+            <img class="icon-img" (click)="toggleTheme()"
                 src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
             }
 
         </div>
-
+        @if ((currentTheme$ | async) === 'dark-theme') {
         <mat-nav-list [ngClass]="(currentTheme$ | async)">
             <mat-list-item>
-                <mat-icon mat-list-icon>person</mat-icon>
+                <mat-icon mat-list-icon>assignment</mat-icon>
                 <h4>PROYECTS</h4>
             </mat-list-item>
             <mat-list-item>
@@ -42,7 +42,42 @@
                 <mat-icon mat-list-icon>folder_shared</mat-icon>
                 <h4>LOGOUT</h4>
             </mat-list-item>
+            <hr class="centered-line-dark">
+
         </mat-nav-list>
+        } @else {
+        <mat-nav-list [ngClass]="(currentTheme$ | async)">
+            <mat-list-item>
+                <mat-icon mat-list-icon>assignment</mat-icon>
+                <h4>PROYECTS</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>assignment</mat-icon>
+                <h4>ABOUT</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>domain</mat-icon>
+                <h4>CONTACT</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>folder_shared</mat-icon>
+                <h4>LINKEDIN</h4>
+            </mat-list-item>
+            <mat-list-item (click)="logout()">
+                <mat-icon mat-list-icon>folder_shared</mat-icon>
+                <h4>LOGOUT</h4>
+            </mat-list-item>
+            <hr class="centered-line-light">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Gerardo</mat-card-title>
+                    <mat-card-subtitle>Programador Front-End</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </mat-nav-list>
+        }
+
     </mat-drawer>
     <mat-drawer-content>
 

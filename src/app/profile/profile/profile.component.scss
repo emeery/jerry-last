@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .header {
   background-size: cover;
   background-position: center;
@@ -10,8 +12,24 @@
   flex: 1 1 auto;
 }
 
+.light-theme {
+     background-image: linear-gradient(to bottom right, $light-theme-secondary-color, $light-theme-primary-color);
+}
+
+.light-theme h4 {
+  color: $light-theme-tertiary-color;
+  font-family: 'SaturdayFont', sans-serif;
+  font-size: 10vh;
+}
+
 .dark-theme {
-  background-color: #030712;
+    background-color: $dark-theme-primary-color;
+}
+
+.dark-theme h4 {
+  color: $dark-theme-tertiary-color !important;
+  font-family: 'SaturdayFont', sans-serif;
+  font-size: 10vh;
 }
 
 .logout-icon-light {
@@ -38,18 +56,29 @@
   transform: scale(2);
 }
 
-h4 {
-  font-family: 'SaturdayFont', sans-serif;
-  font-size: 10vh;
-  color: #B6F487;
-}
-
 .container {
   display: flex;
+  height: 10vh;
 }
 
-.example-container {
-  background: yellow !important;
+.centered-line-dark {
+  width: 50%;
+  margin-left: 3%;
+  margin-right: auto;
+  /* Optional: customize appearance */
+  height: 2px;
+  background-color: $dark-theme-tertiary-color;
+  border: none; /* Remove default border if adding background color */
+}
+
+.centered-line-light {
+  width: 50%;
+  margin-left: 3%;
+  margin-right: auto;
+  /* Optional: customize appearance */
+  height: 2px;
+  background-color: $light-theme-tertiary-color;
+  border: none; /* Remove default border if adding background color */
 }
 
 .header-with-icon {
@@ -57,7 +86,7 @@ h4 {
     background-image: url('../../assets/images/angular-icon.png'); /* Set the icon as a background image */
     background-repeat: no-repeat;
     color: transparent;
-    background-position: left center; /* Position the icon to the left and vertically centered */
+    background-position: left top; /* Position the icon to the left and vertically centered */
     padding-left: 30px; /* Add padding to make space for the icon */
     background-size: 30px 30px; /* Adjust the icon size */
     /* Other styling */
@@ -70,25 +99,27 @@ h4 {
   color: rosybrown;
 }
 
-.light-theme {
-    background-color: #ffffff;
-}
 
-.dark-theme {
-    background-color: #030712;
-}
 
-.theme{
+.icon-img{
   width: 40px;
   height: 40px;
   margin: 3%;
   cursor: pointer;
 }
 
+.example-card {
+  max-width: 400px;
+  border: none;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
 .outer {
-    position: relative; /* or absolute */
-    
-    /* unnecessary styling properties */
+    position: relative;
     margin: 5%;
     width: 80%;
     height: 500px;
