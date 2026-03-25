@@ -1,8 +1,9 @@
-
 <mat-drawer-container [ngClass]="(currentTheme$ | async)">
-    <mat-drawer [ngClass]="(currentTheme$ | async)" mode="side" opened>
+
+    <mat-drawer-content>
+
         <div class="container">
-            <h2 class="header-with-icon">P</h2>
+            <h2 class="header-with-icon"></h2>
             <span class="example-spacer"></span>
             @if ((currentTheme$ | async) === 'dark-theme') {
             <img class="icon-img-theme" (click)="toggleTheme()"
@@ -11,82 +12,87 @@
             <img class="icon-img-theme" (click)="toggleTheme()"
                 src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
             }
+            <button mat-button id="logout" (click)="logout()">Salir </button>
         </div>
-        @if ((currentTheme$ | async) === 'dark-theme') {
-        <mat-nav-list >
-            <mat-list-item>
-                <mat-icon mat-list-icon>assignment</mat-icon>
-                <h4>PROYECTS</h4>
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon mat-list-icon>assignment</mat-icon>
-                <h4>ABOUT</h4>
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon mat-list-icon>domain</mat-icon>
-                <h4>CONTACT</h4>
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon mat-list-icon>folder_shared</mat-icon>
-                <h4>LINKEDIN</h4>
-            </mat-list-item>
-            <mat-list-item (click)="logout()">
-                <mat-icon mat-list-icon>folder_shared</mat-icon>
-                <h4>LOGOUT</h4>
-            </mat-list-item>
-            <hr class="centered-line-dark">
-             <mat-card class="example-card">
-                <mat-card-header>
-                    
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title class="title">GERARDO</mat-card-title>
-                    <mat-card-subtitle class="subtitle">Programador Front-End</mat-card-subtitle>
-                    
-                </mat-card-header>
-            </mat-card>
-        </mat-nav-list>
-        } @else {
-        <mat-nav-list >
-            <mat-list-item>
-                <mat-icon mat-list-icon>assignment</mat-icon>
-                <h4>PROYECTS</h4>
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon mat-list-icon>assignment</mat-icon>
-                <h4>ABOUT</h4>
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon mat-list-icon>domain</mat-icon>
-                <h4>CONTACT</h4>
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon mat-list-icon>folder_shared</mat-icon>
-                <h4>LINKEDIN</h4>
-            </mat-list-item>
-            <mat-list-item (click)="logout()">
-                <mat-icon mat-list-icon>folder_shared</mat-icon>
-                <h4>LOGOUT</h4>
-            </mat-list-item>
-            <hr class="centered-line-light">
-             <mat-card class="example-card">
-                <mat-card-header>
-                    
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title class="title">GERARDO</mat-card-title>
-                    <mat-card-subtitle class="subtitle">Programador Front-End</mat-card-subtitle>
-                    
-                </mat-card-header>
-            </mat-card>
-        </mat-nav-list>
-        } <!-- @else -->
-    </mat-drawer>
-    <mat-drawer-content>
-        <img class="header"
-            src="https://imagenes.elpais.com/resizer/v2/LQ4T7MDHCZG4NORABVV72NS6ZM.jpg?auth=fa883a1c71cfbaa33c3e7f5a515532f171f4600639a2f46cebeac849e6b75e7b&width=1200"
-            alt="Texto alternativo" width="500" height="60">
-        <div class="outer">
-            <div class="inner">I'm always centered<br />doesn't matter how much text, height or width i have.<br />The
-                dimensions or my parent are irrelevant as well</div>
-        </div>
+
+
+        <body>
+            @if ((currentTheme$ | async) === 'dark-theme') {
+            <div class="container-dark">
+                <!-- Foto de Portada -->
+                <div class="profile-header-dark">
+                    <!-- Foto de Perfil -->
+                    <div class="profile-pic-dark"></div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="profile-actions-dark">
+                    <button id="follow" mat-button>Seguir</button>
+                </div>
+
+                <!-- Información del Perfil -->
+                <div class="profile-info-dark">
+                    <div class="name-dark">Gerardo Bautista</div>
+                    <div class="handle-dark">&#64;jerry_dev</div>
+                     <p class="bio-dark">Desarrollador Front End WEB</p>
+                    <p class="bio-dark">📍CDMX, México</p>
+                     <p class="bio-dark">🎉Septiembre 1990</p>
+                    <div class="stats-dark">
+                        <span>150</span> Siguiendo &nbsp; <span>2M</span> Seguidores
+                    </div>
+                </div>
+
+                <!-- Pestañas de Navegación -->
+                <div class="profile-tabs-dark">
+                    <div class="tab-dark active">Tweets</div>
+                    <div class="tab-dark">Respuestas</div>
+                    <div class="tab-dark">Multimedia</div>
+                    <div class="tab-dark">Likes</div>
+                </div>
+
+                <!-- Feed de Tweets -->
+                <div class="feed">
+                    <!-- Tweet 1 -->
+                    <div class="tweet-dark">
+                        <div class="tweet-avatar-dark"></div>
+                        <div class="tweet-content-dark">
+                            <div class="tweet-header-dark">
+                                <span class="tweet-name-dark">Desarrollador Web</span> &#64;dev_example · 2h
+                            </div>
+                            <div class="tweet-text-dark">
+                                Apasionado por las interfaces web con Angular y React 🚀 #Angular #React #WebDev
+                            </div>
+                            <div class="tweet-actions-dark">
+                                <div class="item"> <button mat-stroked-button id="like" color="primary">💬249</button></div>
+                                <div class="item"><button mat-stroked-button id="like" color="primary">🔁2,349</button></div>
+                                <div class="item"><button mat-stroked-button id="like" color="primary">❤️16.2K</button></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tweet 2 -->
+                    <div class="tweet-dark">
+                        <div class="tweet-avatar-dark"></div>
+                        <div class="tweet-content-dark">
+                            <div class="tweet-header-dark">
+                                <span class="tweet-name-dark">Desarrollador Web</span> &#64; dev_example · 5h
+                            </div>
+                            <div class="tweet-text-dark">
+                                Lo que tenga que ver con animaciones, formularios, gráficas y manejo de estado🤔
+                            </div>
+                            <div class="tweet-actions-dark">
+                                <div class="item"> <button mat-stroked-button id="like" color="primary">💬657</button></div>
+                                <div class="item"><button mat-stroked-button id="like" color="primary">🔁1,799</button></div>
+                                <div class="item"><button mat-stroked-button id="like" color="primary">❤️8.6K</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+
+
+        </body>
+
     </mat-drawer-content>
 </mat-drawer-container>
