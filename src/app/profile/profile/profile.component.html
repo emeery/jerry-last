@@ -12,9 +12,8 @@
             <img class="icon-img-theme" (click)="toggleTheme()"
                 src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
             }
-            <button mat-button id="logout" (click)="logout()">Salir </button>
+            <p id="logout" (click)="logout()">Salir </p>   
         </div>
-
 
         <body>
             @if ((currentTheme$ | async) === 'dark-theme') {
@@ -27,16 +26,16 @@
 
                 <!-- Botones de Acción -->
                 <div class="profile-actions-dark">
-                    <button id="follow" mat-button>Seguir</button>
+                    <button id="follow" mat-button>{{ 'PROFILE.FOLLOW-BUTTON' | translate }}</button>
                 </div>
 
                 <!-- Información del Perfil -->
                 <div class="profile-info-dark">
                     <div class="name-dark">Gerardo Bautista</div>
                     <div class="handle-dark">&#64;jerry_dev</div>
-                     <p class="bio-dark">Desarrollador Front End WEB</p>
+                    <p class="bio-dark">Desarrollador Front End WEB</p>
                     <p class="bio-dark">📍CDMX, México</p>
-                     <p class="bio-dark">🎉Septiembre 1990</p>
+                    <p class="bio-dark">🎉Septiembre 1990</p>
                     <div class="stats-dark">
                         <span>150</span> Siguiendo &nbsp; <span>2M</span> Seguidores
                     </div>
@@ -45,8 +44,8 @@
                 <!-- Pestañas de Navegación -->
                 <div class="profile-tabs-dark">
                     <div class="tab-dark active">Tweets</div>
-                    <div class="tab-dark">Respuestas</div>
-                    <div class="tab-dark">Multimedia</div>
+                    <div class="tab-dark">{{ 'PROFILE.NAVIGATION-TAB2' | translate }}</div>
+                    <div class="tab-dark">{{ 'PROFILE.NAVIGATION-TAB3' | translate }}</div>
                     <div class="tab-dark">Likes</div>
                 </div>
 
@@ -60,12 +59,15 @@
                                 <span class="tweet-name-dark">Desarrollador Web</span> &#64;dev_example · 2h
                             </div>
                             <div class="tweet-text-dark">
-                                Apasionado por las interfaces web con Angular y React 🚀 #Angular #React #WebDev
+                                Amamos las interfaces WEB 🚀 #Angular #React #WebDev
                             </div>
                             <div class="tweet-actions-dark">
-                                <div class="item"> <button mat-stroked-button id="like" color="primary">💬249</button></div>
-                                <div class="item"><button mat-stroked-button id="like" color="primary">🔁2,349</button></div>
-                                <div class="item"><button mat-stroked-button id="like" color="primary">❤️16.2K</button></div>
+                                <div class="item"> <button mat-stroked-button id="title" color="primary">💬<span>249</span></button>
+                                </div>
+                                <div class="item"><button mat-stroked-button id="title" color="primary">🔁2,349</button>
+                                </div>
+                                <div class="item"><button mat-stroked-button id="title" color="primary">❤️163</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -78,20 +80,21 @@
                                 <span class="tweet-name-dark">Desarrollador Web</span> &#64; dev_example · 5h
                             </div>
                             <div class="tweet-text-dark">
-                                Lo que tenga que ver con animaciones, formularios, gráficas y manejo de estado🤔
+                                Animaciones, formularios, gráficas y manejo de estado #ngrx 🤔
                             </div>
                             <div class="tweet-actions-dark">
-                                <div class="item"> <button mat-stroked-button id="like" color="primary">💬657</button></div>
-                                <div class="item"><button mat-stroked-button id="like" color="primary">🔁1,799</button></div>
-                                <div class="item"><button mat-stroked-button id="like" color="primary">❤️8.6K</button></div>
+                                <div class="item"> <button mat-stroked-button id="title" color="primary">💬<span>123</span></button>
+                                </div>
+                                <div class="item"><button mat-stroked-button id="title" color="primary">🔁1,549</button>
+                                </div>
+                                <div class="item"><button mat-stroked-button id="title" color="primary">❤️347</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             }
-
-
         </body>
 
     </mat-drawer-content>

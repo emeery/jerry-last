@@ -7,6 +7,7 @@ import { selectCurrentTheme } from '../../store/selectors/theme.selectors';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TOGGLE_THEME } from '../../store/actions/theme.actions';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -20,12 +21,15 @@ export class ProfileComponent implements OnInit {
     private store: Store,
     private _authService: AuthService,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private translate: TranslateService
   ) {
     this.matIconRegistry.addSvgIcon(
       'custom-logo',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/images/icon.svg')
     );
+    this.translate.setFallbackLang('es')
+    this.translate.use('es'); // Set default language
   }
 
   ngOnInit(): void {

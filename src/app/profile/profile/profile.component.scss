@@ -1,8 +1,6 @@
 @import '../../styles/variables';
 
-.example-spacer {
-  flex: 1 1 auto;
-}
+
 
 .light-theme {
   background-image: linear-gradient(to bottom right, $light-theme-secondary-color, $light-theme-primary-color);
@@ -56,9 +54,9 @@
 
 
 .header-with-icon {
-  margin-left: 1%;
   margin-top: 1%;
-  background-image: url('../../assets/images/angular-icon.png');
+  margin-left: 1%;
+  background-image: url('/assets/images/angular-icon.png');
   /* Set the icon as a background image */
   background-repeat: no-repeat;
   color: transparent;
@@ -68,6 +66,9 @@
   font-size: 22px;
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+}
 
 .icon-img-theme {
   width: 40px;
@@ -90,6 +91,13 @@
   background: transparent;
   border: $light-theme-fourth-color 2px solid;
   color: $light-theme-fourth-color;
+}
+
+#logout {
+  color: $dark-theme-seventh-color;
+  margin-top: 2%;
+  margin-right: 3%;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {
@@ -117,9 +125,9 @@
 }
 
 .header-with-icon {
-  margin-left: 2%;
   margin-top: 3%;
-  background-image: url('../../assets/images/angular-icon.png');
+  margin-left: 2%;
+  background-image: url('/assets/images/angular-icon.png');
   /* Set the icon as a background image */
   background-repeat: no-repeat;
   color: transparent;
@@ -128,29 +136,18 @@
   background-size: 30px 30px;
   font-size: 22px;
 }
-}
 
-.container #logout {
-  /* width: 50px !important; */
+#logout {
   color: $dark-theme-seventh-color;
-  border-color: $dark-theme-seventh-color;
+  margin-top: 3%;
+  margin-right: 2%;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-
-//dark theme styles mat card
-/* .example-header-image-dark {
-  background-image: url('https://raw.githubusercontent.com/emeery/jerry-last/refs/heads/master/src/app/assets/images/alien.png');
-  background-size: cover;
-} */
+} // media query
 
 
-:root {
-  --bg-color: #ffffff;
-  --text-color: #0f1419;
-  --border-color: #eff3f4;
-  --twitter-blue: #1d9bf0;
-  --light-gray: #71767b;
-}
 
 * {
   margin: 0;
@@ -160,15 +157,13 @@
 }
 
 body {
-  background-color: $dark-theme-primary-color;
-  // color: var(--text-color);
+  background-color:  #0b1219;
 }
 
-/* --- MAIN CONTAINER DARK THEME--- */
 .container-dark {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #192734;
+  background-color: $dark-theme-primary-color;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
   min-height: 100vh;
@@ -178,7 +173,7 @@ body {
 .profile-header-dark {
   position: relative;
   height: 200px;
-  background-image: url('../../assets/images/cover-header.jpeg');
+  background-image: url('/assets/images/cover-header.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -192,7 +187,7 @@ body {
   height: 140px;
   border-radius: 50%;
   border: 4px solid $dark-theme-sixth-color;
-  background-image: url('../../assets/images/avatar.png');
+  background-image: url('/assets/images/avatar.png');
   background-position: center;
   background-size: contain;
 }
@@ -208,10 +203,8 @@ body {
     margin-top: 30px;
     color: #1d9bf0 !important;
     border-color: #1d9bf0;
-  }
+}
 
-
-/* --- INFO DEL USUARIO --- */
 .profile-info {
   padding: 0 15px;
   margin-bottom: 10px;
@@ -288,7 +281,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-image: url('../../assets/images/avatar.png');
+  background-image: url('/assets/images/avatar.png');
   background-position: center;
   background-size: contain;
   margin-right: 10px;
@@ -319,15 +312,23 @@ body {
 .tweet-actions-dark {
    display: grid;
   /* Creates three columns of equal width that take up all available space */
-  grid-template-columns: 1fr 1fr 1fr;
+   
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 2px; /* Adds space (gutters) between grid items */
+  padding: 3px;
 }
 
-.tweet-actions-dark #like {
+.tweet-actions-dark button {
+  display: flex;
+}
+
+.tweet-actions-dark #title {
   color: $dark-theme-sixth-color;
   border-color: transparent;
-  border-radius: 5%;
-  font-size: 15px;
+  //border-radius: 5%;
+  font-size: 13px;
 }
+
 
 /* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
 @media (max-width: 500px) {
