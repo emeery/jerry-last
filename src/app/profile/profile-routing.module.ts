@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 
-//import { AuthGuard } from '../auth/auth.guard';
-
 const routes: Routes = [
   { path: '', component: ProfileComponent }
 ]
@@ -12,7 +10,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  // providers: [AuthGuard]
 })
 
 export class ProfileRoutingModule { }

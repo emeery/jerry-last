@@ -29,23 +29,29 @@
 }
 
 .logout-icon {
-  color: #B6F487;
-  transform: scale(1.5);
+  color: darkgrey;
+  transform: scale(1);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .logout-icon:hover {
   color: #B6F487;
-  transform: scale(2);
+  transform: scale(1.4);
 }
 
 img {
   cursor: pointer;
-  width: 40%;
+  width: 10%;
+}
+
+
+/* .sun {
+  cursor: pointer;
+  width: 20%;
 }
 
 .sun {
   cursor: pointer;
   width: 30%;
-}
+} */
