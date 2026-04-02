@@ -1,155 +1,6 @@
 @import '../../styles/variables';
 
 
-
-.light-theme {
-  background-image: linear-gradient(to bottom right, $light-theme-secondary-color, $light-theme-primary-color);
-}
-
-.light-theme h4 {
-  color: $light-theme-tertiary-color;
-  font-family: 'SaturdayFont', sans-serif;
-  font-size: 10vh;
-}
-
-.dark-theme {
-  background-color: $dark-theme-primary-color;
-}
-
-.dark-theme h4 {
-  color: $dark-theme-tertiary-color !important;
-  font-family: 'SaturdayFont', sans-serif;
-  font-size: 10vh;
-}
-
-.logout-icon-light {
-  color: gray;
-  transform: scale(1.5);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.logout-icon-light:hover {
-  color: gray;
-  transform: scale(2);
-}
-
-.logout-icon {
-  color: #B6F487;
-  transform: scale(1.5);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.logout-icon:hover {
-  color: #B6F487;
-  transform: scale(2);
-}
-
-.container {
-  display: flex;
-  height: 10vh;
-  background: wheat;
-}
-
-
-
-.header-with-icon {
-  margin-top: 1%;
-  margin-left: 1%;
-  background-image: url('/assets/images/angular-icon.png');
-  /* Set the icon as a background image */
-  background-repeat: no-repeat;
-  color: transparent;
-  background-position: left top;
-  padding-left: 30px;
-  background-size: 30px 30px;
-  font-size: 22px;
-}
-
-.example-spacer {
-  flex: 1 1 auto;
-}
-
-.icon-img-theme {
-  width: 40px;
-  height: 40px;
-  margin: 1%;
-  cursor: pointer;
-}
-
-.dark-theme button {
-  margin-top: 1%;
-  margin-right: 2%;
-  background: transparent;
-  border: $dark-theme-tertiary-color 2px solid;
-  color: $dark-theme-tertiary-color;
-}
-
-.light-theme button {
-  margin-top: 4%;
-  margin-right: 3%;
-  background: transparent;
-  border: $light-theme-fourth-color 2px solid;
-  color: $light-theme-fourth-color;
-}
-
-#logout {
-  color: $dark-theme-seventh-color;
-  margin-top: 2%;
-  margin-right: 3%;
-  cursor: pointer;
-}
-
-@media (max-width: 500px) {
-  .icon-img-theme {
-  width: 40px;
-  height: 40px;
-  margin: 2%;
-  cursor: pointer;
-  }
-  
-  .dark-theme button {
-  margin-top: 2%;
-  margin-right: 2%;
-  background: transparent;
-  border: $dark-theme-tertiary-color 2px solid;
-  color: $dark-theme-tertiary-color;
-}
-
-.light-theme button {
-  margin-top: 2%;
-  margin-right: 3%;
-  background: transparent;
-  border: $light-theme-fourth-color 2px solid;
-  color: $light-theme-fourth-color;
-}
-
-.header-with-icon {
-  margin-top: 3%;
-  margin-left: 2%;
-  background-image: url('/assets/images/angular-icon.png');
-  /* Set the icon as a background image */
-  background-repeat: no-repeat;
-  color: transparent;
-  background-position: left top;
-  padding-left: 30px;
-  background-size: 30px 30px;
-  font-size: 22px;
-}
-
-#logout {
-  color: $dark-theme-seventh-color;
-  margin-top: 3%;
-  margin-right: 2%;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-} // media query
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -157,10 +8,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-body {
-  background-color:  #0b1219;
-}
-
+/* dark theme */
 .container-dark {
   max-width: 600px;
   margin: 0 auto;
@@ -170,7 +18,6 @@ body {
   min-height: 100vh;
 }
 
-/* --- HEADER / FOTO DE PORTADA --- */
 .profile-header-dark {
   position: relative;
   height: 200px;
@@ -179,7 +26,6 @@ body {
   background-position: center;
 }
 
-/* --- FOTO DE PERFIL --- */
 .profile-pic-dark {
   position: absolute;
   bottom: -60px;
@@ -192,7 +38,14 @@ body {
   background-position: center;
   background-size: contain;
 }
-/* --- ACCIONES DE PERFIL (Botón seguir) --- */
+
+.dark-theme button {
+  margin-top: 1%;
+  margin-right: 2%;
+  background: transparent;
+  border: $dark-theme-tertiary-color 2px solid;
+}
+
 .profile-actions-dark  {
   display: flex;
   justify-content: flex-end;
@@ -202,8 +55,8 @@ body {
 
 .profile-actions-dark #follow {
     margin-top: 30px;
-    color: #1d9bf0 !important;
-    border-color: #1d9bf0;
+    color: $dark-theme-fourth-color;
+    border-color: $dark-theme-primary-color 2px solid;
 }
 
 .profile-info {
@@ -245,7 +98,6 @@ body {
   font-weight: bold;
 }
 
-/* --- PESTAÑAS (Tweets, Repuestas...) --- */
 .profile-tabs-dark {
   display: flex;
   border-bottom: 1px solid var(--border-color);
@@ -271,7 +123,6 @@ body {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* --- FEED DE TWEETS --- */
 .tweet-dark {
   display: flex;
   padding: 15px;
@@ -311,11 +162,9 @@ body {
 }
 
 .tweet-actions-dark {
-   display: grid;
-  /* Creates three columns of equal width that take up all available space */
-   
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  gap: 2px; /* Adds space (gutters) between grid items */
+  gap: 2px;
   padding: 3px;
 }
 
@@ -326,12 +175,9 @@ body {
 .tweet-actions-dark #title {
   color: $dark-theme-sixth-color;
   border-color: transparent;
-  //border-radius: 5%;
   font-size: 13px;
 }
 
-
-/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
 @media (max-width: 500px) {
   .profile-pic-dark {
     width: 80px;
@@ -348,8 +194,76 @@ body {
     margin-top: 30px;
   }
 
-  .profile-actions-dark button {
-    margin-top: 30px;
-    color: #1d9bf0 !important;
-  }
 }
+
+/* light theme */
+.container-light {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: $light-theme-primary-color;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  min-height: 100vh;
+}
+
+.profile-header-light {
+  position: relative;
+  height: 200px;
+  background-image: url('/assets/images/cover-header.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-pic-light {
+  position: absolute;
+  bottom: -60px;
+  left: 15px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid $dark-theme-sixth-color;
+  background-image: url('/assets/images/avatar.png');
+  background-position: center;
+  background-size: contain;
+}
+
+.light-theme #follow-light {
+  margin-top: 1%;
+  margin-right: 2%;
+  background: $light-theme-secondary-color;
+  color: $light-theme-primary-color;
+}
+
+.profile-actions-light {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.profile-actions-light #follow-light {
+    margin-top: 30px;
+    /* color: #1d9bf0 !important;
+    border-color: #1d9bf0; */
+}
+
+@media (max-width: 500px) {
+  .profile-pic-light {
+    width: 80px;
+    height: 80px;
+    bottom: -40px;
+    border: 3px solid var(--bg-color);
+  }
+
+  .profile-header-light {
+    height: 150px;
+  }
+
+  .profile-actions-light {
+    margin-top: 30px;
+  }
+
+}
+
+
+

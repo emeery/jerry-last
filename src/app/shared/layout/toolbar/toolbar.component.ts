@@ -46,6 +46,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   logout() {
+    console.log('logout');
     this.authService.logout();
   }
 }

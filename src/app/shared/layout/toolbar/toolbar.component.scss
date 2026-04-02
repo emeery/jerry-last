@@ -2,21 +2,11 @@
   flex: 1 1 auto;
 }
 
-.icon-display {
-  transform: scale(2);
-  color: #FFCE71;
-}
-
-.icon-display-sun {
-  transform: scale(2);
-  color: #0F172B;
-}
-
 .dark-theme {
   background-color: #030712;
 }
 
-.logout-icon-light {
+/* .logout-icon-light {
   color: gray;
   transform: scale(1.5);
   cursor: pointer;
@@ -26,7 +16,7 @@
 .logout-icon-light:hover {
   color: gray;
   transform: scale(2);
-}
+} */
 
 .logout-icon {
   color: darkgrey;
@@ -35,8 +25,9 @@
   transition: transform 0.3s ease;
 }
 
-.logout-icon:hover {
-  color: #B6F487;
+.logout-icon:hover{
+  color: #B6F487 !important;
+  cursor: pointer;
   transform: scale(1.4);
 }
 
@@ -45,13 +36,3 @@ img {
   width: 10%;
 }
 
-
-/* .sun {
-  cursor: pointer;
-  width: 20%;
-}
-
-.sun {
-  cursor: pointer;
-  width: 30%;
-} */
