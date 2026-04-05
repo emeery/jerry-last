@@ -1,3 +1,4 @@
+@use '@angular/material' as mat;
 @import '../../styles/variables';
 
 .login-box {
@@ -11,14 +12,16 @@ mat-card {
   width: 300px;
   padding: 5%;
   height: 50%;
+  @include mat.elevation(1);
 }
 
 .light-theme {
-  background-image: linear-gradient(to bottom right, $light-theme-secondary-color, $light-theme-primary-color);
+  //background-image: linear-gradient(to bottom right, $light-theme-secondary-color, $light-theme-primary-color);
+  background: $dark-theme-eighth-color;
 }
 
 .toolbar-light {
-  background-color: $light-theme-secondary-color;
+  background-color: $dark-theme-sixth-color;
 }
 
 .dark-theme {
@@ -47,6 +50,14 @@ img {
 .sun {
   cursor: pointer;
   width: 30%;
+}
+
+.custom-button {
+  background-color: $dark-theme-nineth-color !important;
+}
+
+.custom-button-light {
+  background-color: $light-theme-fifth-color !important;
 }
 
 @media (max-width: 500px) {

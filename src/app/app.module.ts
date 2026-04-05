@@ -28,6 +28,8 @@ import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { MatButtonModule } from '@angular/material/button';
+import { EffectsModule, provideEffects } from '@ngrx/effects';
+import { AuthEffects } from './auth/auth.effects';
 
 
 
@@ -51,7 +53,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    // EffectsModule.forRoot([AuthEffects])
   ],
   providers: [
     provideAnimationsAsync(),
@@ -68,7 +71,7 @@ import { MatButtonModule } from '@angular/material/button';
       }),
       fallbackLang: 'es',
       lang: 'es'
-    })
+    }),
   ],
   bootstrap: [AppComponent]
 })

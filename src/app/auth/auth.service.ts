@@ -57,7 +57,11 @@ export class AuthService {
         }
       }).catch(err => {
         console.log(err)
-        this.store.dispatch(UI.STOP_LOADING());
+        if(err) {
+          this.store.dispatch(UI.SHOW_MODAL_ERROR())
+          this.store.dispatch(UI.STOP_LOADING());
+        }
+        
       })
   }
 

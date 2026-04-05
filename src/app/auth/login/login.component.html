@@ -20,7 +20,7 @@
 
   <div class="login-box">
     <form [formGroup]="form" (submit)="onSubmit()">
-      <mat-card [ngClass]="(currentTheme$ | async)">
+      <mat-card class="custom-card"  [ngClass]="(currentTheme$ | async)">
         @if (isLoading$ | async) {
         <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         } @else {
@@ -28,7 +28,12 @@
           <input formControlName="email" matInput placeholder="Correo" class="inp">
           <mat-icon matPrefix class="my-icon">alternate_email</mat-icon>
         </mat-form-field>
-        <button color="accent" mat-flat-button type="submit" [disabled]="form.invalid">Ingresar</button>
+        @if ((currentTheme$ | async) === 'dark-theme') {
+          <button class="custom-button" mat-flat-button type="submit" [disabled]="form.invalid">Ingresar</button>
+        } @else {
+          <button class="custom-button-light" mat-flat-button type="submit" [disabled]="form.invalid">Ingresar</button>
+        }
+        
         }
       </mat-card>
     </form>
