@@ -1,0 +1,167 @@
+<div [ngClass]="(currentTheme$ | async)">
+    <app-toolbar></app-toolbar>
+
+    @if ((currentTheme$ | async) === 'dark-theme') {
+    <div class="container-dark">
+        <div class="profile-header-dark">
+            <div class="profile-pic-dark"></div>
+        </div>
+        <div class="profile-actions-dark">
+            <button id="follow" mat-button>{{ 'PROFILE.FOLLOW-BUTTON' | translate }}</button>
+        </div>
+
+        <div class="profile-info-dark">
+            <div class="container-verified">
+                <span class="name-dark">Gerardo Bautista</span>
+                <img src="assets/images/verificar-white.png" alt="Icon">
+            </div>
+            <div class="handle-dark">&#64;jerry_dev</div>
+            <p class="bio-dark">{{ 'PROFILE.ROLE' | translate }}</p>
+            <p class="bio-dark">📍CDMX, México</p>
+            <p class="bio-dark">🎉{{ 'PROFILE.DATE' | translate }}</p>
+            <div class="stats-dark">
+                <span>150K</span>{{ 'PROFILE.FOLLOWING' | translate }} &nbsp; <span>2M</span> {{ 'PROFILE.FOLLOWERS' |
+                translate }}
+            </div>
+        </div>
+
+        <!-- Pestañas de Navegación -->
+        <div class="profile-tabs-dark">
+            <div class="tab-dark active">Tweets</div>
+            <div class="tab-dark">{{ 'PROFILE.NAVIGATION-TAB2' | translate }}</div>
+            <div class="tab-dark">{{ 'PROFILE.NAVIGATION-TAB3' | translate }}</div>
+            <div class="tab-dark">Likes</div>
+        </div>
+
+        <!-- Feed de Tweets -->
+        <div class="feed">
+            <!-- Tweet 1 -->
+            <div class="tweet-dark">
+                <div class="tweet-avatar-dark"></div>
+                <div class="tweet-content-dark">
+                    <div class="tweet-header-dark">
+                        <span class="tweet-name-dark">Gerardo Bautista</span><img
+                            src="assets/images/verificar-white.png" alt="Icon"> <span class="tweet-tag">&#64;jerry_dev
+                            · 2h</span>
+                    </div>
+                    <div class="tweet-text-dark">
+                        Entusiasta de interfaces 🚀 #angular #react #web
+                    </div>
+                    <div class="tweet-actions-dark">
+                        <div class="item"> <button mat-stroked-button id="title"
+                                color="primary">💬<span>249</span></button>
+                        </div>
+                        <div class="item"><button mat-stroked-button id="title" color="primary">🔁2,349</button>
+                        </div>
+                        <div class="item"><button mat-stroked-button id="title" color="primary">❤️163</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tweet 2 -->
+            <div class="tweet-dark">
+                <div class="tweet-avatar-dark"></div>
+                <div class="tweet-content-dark">
+                    <div class="tweet-header-dark">
+                        <span class="tweet-name-dark">Gerardo Bautista</span><img
+                            src="assets/images/verificar-white.png" alt="Icon"> <span class="tweet-tag">&#64;jerry_dev
+                            · 2h</span>
+                    </div>
+                    <div class="tweet-text-dark">
+                        Animaciones, formularios, gráficas y manejo de estado #ngrx #redux 🤔
+                    </div>
+                    <div class="tweet-actions-dark">
+                        <div class="item"> <button mat-stroked-button id="title"
+                                color="primary">💬<span>123</span></button>
+                        </div>
+                        <div class="item"><button mat-stroked-button id="title" color="primary">🔁1,549</button>
+                        </div>
+                        <div class="item"><button mat-stroked-button id="title" color="primary">❤️347</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    } @else {
+    <div class="container-light">
+        <div class="profile-header-light">
+            <div class="profile-pic-light"></div>
+        </div>
+        <div class="profile-actions-light">
+            <button id="follow-light" mat-button>{{ 'PROFILE.FOLLOW-BUTTON' | translate }}</button>
+        </div>
+        <div class="profile-info-light">
+            <div class="container-verified">
+                <span class="name-light">Gerardo Bautista</span>
+                <img src="assets/images/verificar-white.png" alt="Icon">
+            </div>
+            <div class="handle-light">&#64;jerry_dev</div>
+            <p class="bio-light">{{ 'PROFILE.ROLE' | translate }}</p>
+            <p class="bio-light">📌CDMX, México</p>
+            <p class="bio-light">🎉{{ 'PROFILE.DATE' | translate }}</p>
+            <div class="stats-light">
+                <span>150K</span>{{ 'PROFILE.FOLLOWING' | translate }} &nbsp; <span>2M</span> {{ 'PROFILE.FOLLOWERS' |
+                translate }}
+            </div>
+        </div>
+
+        <!-- Pestañas de Navegación -->
+        <div class="profile-tabs-light">
+            <div class="tab-light active">Tweets</div>
+            <div class="tab-light">{{ 'PROFILE.NAVIGATION-TAB2' | translate }}</div>
+            <div class="tab-light">{{ 'PROFILE.NAVIGATION-TAB3' | translate }}</div>
+            <div class="tab-light">Likes</div>
+        </div>
+
+        <!-- Feed de Tweets -->
+        <!-- Tweet 1 -->
+        <div class="tweet-light">
+            <div class="tweet-avatar-dark"></div>
+            <div class="tweet-content-light">
+                <div class="tweet-header-light">
+                    <span class="tweet-name-light">Gerardo Bautista</span><img src="assets/images/verificar-white.png"
+                        alt="Icon"> <span class="tweet-tag">&#64;jerry_dev
+                        · 2h</span>
+                </div>
+                <div class="tweet-text-light">
+                    Entusiasta de interfaces 🚀 #angular #react #web
+                </div>
+                <div class="tweet-actions-dark">
+                    <div class="item"> <button mat-stroked-button id="title" color="primary">💬<span>249</span></button>
+                    </div>
+                    <div class="item"><button mat-stroked-button id="title" color="primary">🔁2,349</button>
+                    </div>
+                    <div class="item"><button mat-stroked-button id="title" color="primary">❤️163</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tweet 2 -->
+        <div class="tweet-dark">
+            <div class="tweet-avatar-dark"></div>
+            <div class="tweet-content-light">
+                <div class="tweet-header-light">
+                    <span class="tweet-name-light">Gerardo Bautista</span><img src="assets/images/verificar-white.png"
+                        alt="Icon"> <span class="tweet-tag">&#64;jerry_dev
+                        · 2h</span>
+                </div>
+                <div class="tweet-text-light">
+                    Animaciones, formularios, gráficas y manejo de estado #ngrx #redux 🤔
+                </div>
+                <div class="tweet-actions-dark">
+                    <div class="item"> <button mat-stroked-button id="title">💬<span>123</span></button>
+                    </div>
+                    <div class="item"><button mat-stroked-button id="title">🔁1,549</button>
+                    </div>
+                    <div class="item"><button mat-stroked-button id="title">❤️347</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

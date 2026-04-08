@@ -1,0 +1,38 @@
+/* global styles to this file, and also import other style files */
+@import './app/styles/variables';
+
+@font-face {
+  font-family: 'SaturdayFont'; 
+  src: url('/assets/fonts/Saturday_Farmhouse.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'WelcomeDarling'; 
+  src: url('/assets/fonts/Welcome_Darling.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Chirp'; 
+  src: url('/assets/fonts/Chirp_Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Chirp-Md'; /* Name your font family */
+  src: url('/assets/fonts/Chirp_Medium.otf') format('opentype');
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  //font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+}

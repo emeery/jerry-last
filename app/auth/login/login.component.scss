@@ -1,0 +1,67 @@
+@use '@angular/material' as mat;
+@import '../../styles/variables';
+
+.login-box {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card {
+  width: 300px;
+  padding: 5%;
+  height: 50%;
+  @include mat.elevation(1);
+}
+
+.light-theme {
+  //background-image: linear-gradient(to bottom right, $light-theme-secondary-color, $light-theme-primary-color);
+  background: $dark-theme-eighth-color;
+}
+
+.toolbar-light {
+  background-color: $dark-theme-sixth-color;
+}
+
+.dark-theme {
+  background-color: $dark-theme-primary-color;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+// images & icons styles
+.icon-display {
+  transform: scale(2);
+  color: $dark-theme-secondary-color;
+}
+
+.icon-display-sun {
+  transform: scale(2);
+}
+
+img {
+  cursor: pointer;
+  width: 40%;
+}
+
+.sun {
+  cursor: pointer;
+  width: 30%;
+}
+
+.custom-button {
+  background-color: $dark-theme-nineth-color !important;
+}
+
+.custom-button-light {
+  background-color: $light-theme-fifth-color !important;
+}
+
+@media (max-width: 500px) {
+  #moon {
+    width: 100%;
+  }
+}

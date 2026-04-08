@@ -1,0 +1,28 @@
+// dark-theme colors
+$dark-theme-primary-color: #030712;
+$dark-theme-secondary-color: #FFCE71;
+$dark-theme-tertiary-color: #B6F486;
+$dark-theme-fourth-color: #ddf1cd;
+$dark-theme-fifth-color: #5F9EA0;
+$dark-theme-sixth-color: #f4dba9;
+$dark-theme-seventh-color: #FFFACD;
+$dark-theme-eighth-color: #f7f1bc;
+$dark-theme-nineth-color: #483D8B;
+
+// light-theme 
+$light-theme-primary-color: #ffffff;
+$light-theme-secondary-color: #1EA2F0;
+$light-theme-tertiary-color: #cd7c64;
+$light-theme-fourth-color: #708090;
+$light-theme-fifth-color: #DEB887;
+$light-theme-sixth-color: #A9A9A9;
+
+
+$direction: 45deg;
+
+
+/* @mixin gradient-dark-theme($direction, $ligth-theme-secondary-color, $light-theme-primary-color) {
+  background: linear-gradient($direction, $ligth-theme-secondary-color, $light-theme-primary-color);
+  background: -webkit-linear-gradient($direction,$ligth-theme-secondary-color, $light-theme-primary-color);
+  // ... other prefixes
+} */
