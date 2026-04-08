@@ -68,7 +68,7 @@ import { languageReducer } from './store/reducers/language.reducer';
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
-        prefix: '/assets/i18n/',
+        prefix: '../assets/i18n/',
         suffix: '.json'
       }),
       fallbackLang: 'es',
