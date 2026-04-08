@@ -8,5 +8,8 @@
     "DATE": "Front End since 2019",
     "FOLLOWING":"Following",
     "FOLLOWERS": "Followers"
+  },
+  "LOGINN": {
+    "LOGIN": "Login"
   }
 }

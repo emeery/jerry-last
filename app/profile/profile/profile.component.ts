@@ -16,7 +16,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class ProfileComponent implements OnInit {
   isAuthenticated$: Observable<boolean>;
   currentTheme$: Observable<string>;
-  pokeball = '../../assets/images/icon.png';
   constructor(
     private store: Store,
     private _authService: AuthService,

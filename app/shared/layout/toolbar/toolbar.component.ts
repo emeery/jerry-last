@@ -34,8 +34,9 @@ export class ToolbarComponent implements OnInit {
   }
 
   setLanguage(): void {
-    this.translate.addLangs(['en', 'es']);
+    // this.translate.addLangs(['en', 'es']);
     this.store.select(selectCurrentLanguage).subscribe(lang => {
+      console.log('ña', lang);
       this.translate.setFallbackLang(lang);
       this.translate.use(lang);
     });

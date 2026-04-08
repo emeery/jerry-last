@@ -29,9 +29,9 @@
           <mat-icon matPrefix class="my-icon">alternate_email</mat-icon>
         </mat-form-field>
         @if ((currentTheme$ | async) === 'dark-theme') {
-          <button class="custom-button" mat-flat-button type="submit" [disabled]="form.invalid">Ingresar</button>
+          <button class="custom-button" mat-flat-button type="submit" [disabled]="form.invalid">{{ 'LOGINN.LOGIN' | translate }}</button>
         } @else {
-          <button class="custom-button-light" mat-flat-button type="submit" [disabled]="form.invalid">Ingresar</button>
+          <button class="custom-button-light" mat-flat-button type="submit" [disabled]="form.invalid">{{ 'LOGINN.LOGIN' | translate }}</button>
         }
         
         }

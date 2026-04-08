@@ -4,7 +4,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { provideHttpClient } from '@angular/common/http';
-import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateService, TranslateModule } from '@ngx-translate/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideState, provideStore} from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
@@ -28,8 +28,8 @@ import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { MatButtonModule } from '@angular/material/button';
-import { EffectsModule, provideEffects } from '@ngrx/effects';
-import { AuthEffects } from './auth/auth.effects';
+/* import { EffectsModule, provideEffects } from '@ngrx/effects';
+import { AuthEffects } from './auth/auth.effects'; */
 import { languageReducer } from './store/reducers/language.reducer';
 
 
@@ -55,6 +55,7 @@ import { languageReducer } from './store/reducers/language.reducer';
     MatInputModule,
     MatIconModule,
     MatProgressBarModule,
+    TranslateModule
     // EffectsModule.forRoot([AuthEffects])
   ],
   providers: [
