@@ -30,6 +30,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { MatButtonModule } from '@angular/material/button';
 import { EffectsModule, provideEffects } from '@ngrx/effects';
 import { AuthEffects } from './auth/auth.effects';
+import { languageReducer } from './store/reducers/language.reducer';
 
 
 
@@ -63,6 +64,7 @@ import { AuthEffects } from './auth/auth.effects';
     provideState({ name: 'ui', reducer: uiReducer }),
     provideState({ name: 'theme', reducer: themeReducer }),
     provideState({ name: 'auth', reducer: authReducer}),
+    provideState({ name: 'language', reducer: languageReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideTranslateService({
       loader: provideTranslateHttpLoader({

@@ -2,6 +2,12 @@
   "PROFILE": {
     "FOLLOW-BUTTON": "Seguir",
     "NAVIGATION-TAB2": "Posts",
-    "NAVIGATION-TAB3": "Multimedia"
+    "NAVIGATION-TAB3": "Multimedia",
+    "ROLE": "Desarrollador Front End",
+    "BIRTHDAY": "Septiembre 1990",
+    "DATE": "Front End desde 2019",
+    "FOLLOWING":"Siguiendo",
+    "FOLLOWERS": "Seguidores"
+
   }
 }

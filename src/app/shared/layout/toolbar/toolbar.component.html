@@ -4,10 +4,17 @@
     <img class="moon" (click)="toggleTheme()"
         src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg" />
     <span class="example-spacer"></span>
+    @if ((currentLanguage$ | async) === 'es') {
     <button mat-icon-button>
-        <mat-icon>g_translate</mat-icon>
+        <mat-icon (click)="toggleLanguage()">g_translate</mat-icon>
     </button>
-    <button mat-icon-button class="logout-icon" >
+    } @else {
+    <button style="color: darksalmon;" mat-icon-button>
+        <mat-icon (click)="toggleLanguage()">g_translate</mat-icon>
+    </button>
+    }
+
+    <button mat-icon-button class="logout-icon">
         <mat-icon (click)="logout()">exit_to_app</mat-icon>
     </button>
     } @else {
@@ -15,7 +22,7 @@
         src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg" />
     <span class="example-spacer"></span>
     <button mat-icon-button>
-        <mat-icon>g_translate</mat-icon>
+        <mat-icon (click)="toggleLanguage()">g_translate</mat-icon>
     </button>
     <button mat-icon-button class="logout-icon">
         <mat-icon>exit_to_app</mat-icon>
